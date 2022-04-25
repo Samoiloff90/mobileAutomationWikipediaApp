@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 import static io.qameta.allure.Allure.step;
 
-public class wikiMobileTest {
+public class WikiMobileTest {
     @Test
     void searchNewWikiTest() {
         step("Skip Language Selection", () ->
