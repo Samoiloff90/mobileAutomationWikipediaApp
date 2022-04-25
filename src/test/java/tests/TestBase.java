@@ -12,13 +12,12 @@ import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.logevents.SelenideLogger.addListener;
 import static helpers.Attach.getSessionId;
 
-public class Testbase {
+public class TestBase {
     @BeforeAll
     public static void setup() {
         addListener("AllureSelenide", new AllureSelenide());
-
         Configuration.browser = BrowserStackMobileDriver.class.getName();
-        Configuration.browser = null;
+        Configuration.browserSize = null;
     }
 
     @BeforeEach
@@ -27,13 +26,13 @@ public class Testbase {
     }
 
     @AfterEach
-    public void afterEach() {
-        String sessionID = getSessionId();
+    public void afterEach () {
+        String sessionId = getSessionId();
 
         Attach.screenshotAs("Last screenshot");
         Attach.pageSource();
 
         closeWebDriver();
-        Attach.video(sessionID);
+        Attach.video(sessionId);
     }
 }
