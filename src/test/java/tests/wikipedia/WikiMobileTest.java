@@ -2,13 +2,15 @@ package tests.wikipedia;
 
 import io.appium.java_client.MobileBy;
 import org.junit.jupiter.api.Test;
+import tests.TestBase;
+
 import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
 import static com.codeborne.selenide.Selectors.byClassName;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 import static io.qameta.allure.Allure.step;
 
-public class WikiMobileTest {
+public class WikiMobileTest extends TestBase {
     @Test
     void searchNewWikiTest() {
         step("Skip Language Selection", () ->
